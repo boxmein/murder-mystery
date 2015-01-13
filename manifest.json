@@ -1,0 +1,38 @@
+{
+  "name": "Murder GM Tool",
+  "version": "1.2.0",
+  "description": "Easily manage murder mystery games of a specific kind",
+  
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+
+  "icons": [
+    {
+      "src": "icon/murder-icon-57x57.png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "icon/murder-icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "icon/murder-icon-144x144.png",
+      "sizes": "144x144",
+    },
+    {
+      "src": "icon/murder-icon-192x192.png",
+      "sizes": "192x192"
+    }
+    {
+      "src": "icon/murder-icon-512x512.png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "icon/murder-icon.svg",
+      "type": "application/svg"
+    }
+  ]
+
+
+}

@@ -1,0 +1,50 @@
+form.new-game
+  
+  h1 {{editing ? 'Edit game' : 'New game'}} &lsquo;{{game.name}}&rsquo;
+
+  .row
+    md-text-float(label='Game Name', ng-model='game.name', required)
+  
+  h2 Players
+
+  .players
+      md-list
+        md-item(ng-repeat='person in game.players')
+          md-item-content()
+            .md-left-content(layout='row')
+              
+              md-button(title='Delete Player', 
+                        aria-label='Delete Player'
+                        ng-click='game.players.splice($index,1)')
+                i.fa.fa-close
+              
+              md-button(title='Edit Player', 
+                        aria-label='Edit Player'
+                        ng-click='edit(person, $index, $event)')
+                i.fa.fa-edit
+
+              md-button.md-warn(ng-model='person.murderer', 
+                                ng-class='{\'md-raised\': person.murderer}'
+                                aria-label='is the person the murderer?'
+                                ng-click='person.murderer=!person.murderer') Murderer
+              md-button.md-accent(ng-model='person.dead',
+                        aria-label='is the person dead?'
+                        ng-click='person.dead=!person.dead') 
+                | {{person.dead?'Dead':'Alive'}}
+            .md-tile-content
+              h3 {{person.name}}
+
+    .row(layout='row')
+      md-text-float(label='Name', 
+                    ng-model='new_player_name', 
+                    required,
+                    minlength='1',
+                    ng-keypress='addPlayerRow($event)')
+      md-button(ng-click='addPlayerRow()')
+        i.fa.fa-plus-square
+        | Add player
+
+  .row
+    md-button.submit.md-raised.md-primary(type='submit', ng-click='submit()') Submit
+    md-button.delete.md-warn(ng-click='deleteGame($event)') Delete
+

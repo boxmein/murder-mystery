@@ -1,0 +1,17 @@
+CACHE MANIFEST
+# Version 1
+
+css/angular-material.css
+css/style.css
+js/index.min.js
+partials/howto.html
+partials/main.html
+partials/new-game.html
+partials/edit-person.html
+css/font-awesome.min.css
+fonts/oswald-ext.woff2
+fonts/oswald.woff2
+fonts/fontawesome-webfont.eot
+fonts/fontawesome-webfont.woff
+fonts/fontawesome-webfont.ttf
+fonts/fontawesome-webfont.svg

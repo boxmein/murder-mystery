@@ -1,0 +1,27 @@
+md-dialog
+  md-content
+    h1 Edit {{person.name}}
+    .row
+      md-text-float(label='Name', required, minlength='3', ng-model='person.name')
+    .row(layout='row')
+      md-button.md-warn(
+                ng-class='{\'md-raised\': person.murderer}',
+                aria-label='is the person the murderer?',
+                ng-click='person.murderer=!person.murderer') 
+        | Murderer
+
+      md-button.md-accent(
+                aria-label='is the person dead?',
+                ng-click='person.dead=!person.dead') 
+        | {{person.dead?'Dead':'Alive'}}
+
+      md-button.md-accent(
+                aria-label='is the person a murderer suspect?',
+                ng-class='{"md-raised": person.suspect}',
+                ng-click='person.suspect=!person.suspect')
+        | Suspect
+
+  .md-actions(layout='row')
+    md-button(ng-click='cancel()') Cancel
+    md-button.md-primary.md-raised(type='submit', ng-click='answer(person)') Save
+

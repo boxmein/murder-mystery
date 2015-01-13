@@ -1,0 +1,119 @@
+// stylesheets!
+// make style.css
+
+body {
+  // background-color: #E8EAF6;
+  font-size: 14px;
+}
+
+header h1 {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: normal;
+}
+
+header .md-button {
+  margin: 10px;
+}
+
+.md-button .fa {
+  padding-right: 7px;
+}
+
+header, md-toolbar {
+  width: 100%; 
+}
+
+
+md-toolbar.md-tall {
+  height: auto;
+  max-height: none;
+  @media screen and (min-width: 600px) {
+    height: 192px;
+    max-height: 192px;
+  }
+}
+
+
+md-toolbar, md-toolbar.md-default-theme {
+  background-color: #3F51B5;
+  padding: 15px;
+  @media screen and (min-width: 540px) {
+    padding: 0 12.5%;
+  }
+}
+
+
+md-content { 
+  width: 100%; 
+}
+
+
+md-radio-button {
+  margin: 15px 5px;
+}
+
+
+.main {
+  margin-top: 30px; 
+
+  width: 100%;
+  @media screen and (min-width: 540px) {
+    width: 75%;
+  }
+
+
+  margin: 15px auto;
+  padding: 15px;
+}
+
+
+.player {
+  transition: background-color 0.3s ease;
+  &:hover { background-color: #EDEDED; }
+
+  .desc {
+    margin-left: 7px;
+    margin-top: 2px;
+  }
+}
+
+footer {
+  font-size: 0.9em;
+  color: #DEDEDE;
+  a { color: inherit; }
+}
+
+.md-button.delete {
+  margin-left: 2em;
+}
+
+.md-button {
+  margin: 0.5em;
+}
+
+md-tab-label i.fa {
+  display: inline-block;
+  margin-left: 1em;
+
+  &:hover {
+    color: white; 
+  }
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(fonts/oswald-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url(fonts/oswald.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}

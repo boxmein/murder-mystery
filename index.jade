@@ -1,0 +1,69 @@
+doctype html
+//- make
+html.no-js(lang='en', ng-app='murder', manifest='appcache.manifest')
+  head
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='stylesheet', type='text/css', href='css/font-awesome.min.css')
+    link(rel='stylesheet', type='text/css', href='css/angular-material.css')
+    link(rel='stylesheet', type='text/css', href='css/style.css')
+    //- Web app stuff
+    link(rel='manifest', href='manifest.json')
+
+    //- if manifest.json falls through use these:
+    meta(name='application-name', content='Murder GM Tool')
+    meta(name='mobile-web-app-capable', content='yes')
+
+    each link in ['57x57','72x72','144x144', '192x192', '512x512']
+      link(rel='icon', sizes='#{link}', href='icon/murder-icon-#{link}.png')
+      link(rel='apple-touch-icon', sizes='#{link}', href='icon/murder-icon-#{link}.png')
+
+    title Murder GM Tool
+
+  body(layout='column', 
+       layout-align='start center',
+       ng-controller='SuperCtrl')
+
+    md-content(layout-align='center center')
+      header
+        md-toolbar.md-tall.md-accent
+          .md-toolbar-tools-bottom
+            h1 Murder GM
+            nav(layout='row', layout-sm='column', layout-align='center center')
+              md-button(href, ui-sref='howto') 
+                i.fa.fa-question
+                | how to play
+              md-button(href, ui-sref='home')
+                i.fa.fa-bolt
+                | started games
+              md-button(href, ui-sref='edit') 
+                i.fa.fa-asterisk
+                | new game
+  
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> 
+        browser. Please <a href="http://browsehappy.com/">upgrade your browser
+        </a> to improve your experience.</p>
+        <![endif]-->
+  
+      .main(ui-view)
+        md-progress-circular(md-mode='indeterminate', ng-hide='done')
+
+      footer
+        | &copy; 2015 
+        a(href='http://boxmein.net', target='_blank') boxmein
+        |,
+        a(href='LICENSE') apache license 2.0
+
+    script(src='js/index.min.js')
+
+    script(async).
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-34425443-3', 'auto');
+      ga('send', 'pageview');
