@@ -1,36 +1,36 @@
 md-card
   md-tabs(ng-show='games && games.length > 0')
-    md-tab(ng-repeat='game in games', 
+    md-tab(ng-repeat='game in games',
            md-on-select='openGame(game)')
       md-tab-label
         | {{game.name}}
         i.fa.fa-edit(ng-click='$state.go(\'edit\', {id: game.id})')
-  
+
   md-list.player-list
     md-item(ng-repeat='person in game.players')
       md-item-content.player
         .md-tile-left.dead-thing(layout='row')
-  
+
           md-button.md-warn(
                     ng-class='{\'md-raised\': person.murderer}',
                     aria-label='is the person the murderer?',
                     title='Is this person a murderer?',
-                    ng-click='save(person.murderer=!person.murderer)') 
-            | {{window.innerWidth>540?'Murderer':'M'}}
-  
+                    ng-click='save(person.murderer=!person.murderer)')
+            | Murderer
+
           md-button.md-accent(
                     aria-label='is the person dead?',
                     title='Is this person dead?',
-                    ng-click='save(person.dead=!person.dead)') 
-            | {{person.dead?(window.innerWidth>540?'Dead':'D'):(window.innerWidth>540?'Alive':'A')}}
-  
+                    ng-click='save(person.dead=!person.dead)')
+            | {{person.dead ? 'Dead' : 'Alive'}}
+
           md-button.md-accent(
                     aria-label='is the person a murderer suspect?',
                     title='Is this person a suspected murderer?',
                     ng-class='{"md-raised": person.suspect}',
                     ng-click='save(person.suspect=!person.suspect)')
-            | {{window.innerWidth>540?'Suspect':'S'}}
-  
+            | Suspect
+
         .md-tile-content.desc
           h3 {{person.name}}
 
@@ -44,7 +44,7 @@ md-card
                       aria-label='Delete Person')
               i.fa.fa-close
 
-  .no-games-found(ng-hide='games && games.length > 0') 
+  .no-games-found(ng-hide='games && games.length > 0')
     :markdown
       ## You have no games stored in local storage.
 

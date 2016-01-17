@@ -5,3 +5,4 @@ fonts/*
 *.map
 js/angular-glob.js
 js/index.js
+js/index.min.js

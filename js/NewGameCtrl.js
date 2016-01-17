@@ -58,18 +58,20 @@ app.controller('NewGameCtrl',
 
   };
 
-
-  $scope.addPlayerRow = function($event) {
-    if ($event.keyCode && $event.keyCode === 13) {
-      var player = StorageService.newPlayer();
-
-      player.name = $scope.new_player_name;
-
-      $scope.new_player_name = '';
-      $scope.game.players.push(player);      
-
+  $scope.enter_addPlayerRow = function($event) {
+    if ($event.hasOwnProperty("keyCode") && $event.keyCode === 13) {
+      $scope.addPlayerRow($event);
       $event.preventDefault();
     }
+  };
+
+  $scope.addPlayerRow = function($event) {    
+    var player = StorageService.newPlayer();
+
+    player.name = $scope.new_player_name;
+
+    $scope.new_player_name = '';
+    $scope.game.players.push(player);      
   };
 
   // Launch the edit dialog for a player

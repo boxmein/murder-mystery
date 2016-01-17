@@ -39,7 +39,7 @@ form.new-game
                     ng-model='new_player_name', 
                     required,
                     minlength='1',
-                    ng-keypress='addPlayerRow($event)')
+                    ng-keypress='enter_addPlayerRow($event)')
       md-button(ng-click='addPlayerRow()')
         i.fa.fa-plus-square
         | Add player
